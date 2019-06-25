@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    [self layoutSubViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,6 +53,43 @@
     [self.view addSubview:self.tipTitleLabel];
     [self.view addSubview:self.tipMessageLabel];
 }
+
+- (void)layoutSubViews {
+    [self.voiceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(Scale(-5));
+        make.size.mas_equalTo(CGSizeMake(Scale(78), Scale(78)));
+    }];
+    
+    [self.buttonAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(self.voiceBtn);
+        make.size.mas_equalTo(CGSizeMake(Scale(250), Scale(250)));
+    }];
+    
+    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(Scale(15));
+        make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(Scale(-15));
+        make.size.mas_equalTo(CGSizeMake(Scale(50), Scale(50)));
+    }];
+    
+    [self.tipTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(Scale(94));
+    }];
+    
+    [self.tipMessageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.tipTitleLabel.mas_bottom);
+        make.height.equalTo(@150);
+    }];
+    
+    [self.waveformView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.equalTo(self.view);
+        make.height.equalTo(@Scale(150));
+        make.width.equalTo(@(ScreenWidth));
+    }];
+}
+
 
 #pragma mark - Method
 #pragma mark
@@ -98,7 +136,7 @@
 
 - (UIButton *)voiceBtn {
     if (!_voiceBtn) {
-        _voiceBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.center.x - 40, self.view.frame.size.height - 100, 80, 80)];
+        _voiceBtn = [[UIButton alloc]init];
         _voiceBtn.backgroundColor = [UIColor redColor];
         _voiceBtn.backgroundColor = [UIColor colorWithHexString:@"9a7950"];
         _voiceBtn.layer.cornerRadius = 39;
@@ -114,7 +152,7 @@
 
 - (UILabel *)tipTitleLabel {
     if (!_tipTitleLabel) {
-        _tipTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 200, 100, 400, 50)];
+        _tipTitleLabel = [[UILabel alloc]init];
         _tipTitleLabel.text = @"您可以这么说:";
         _tipTitleLabel.textAlignment = NSTextAlignmentCenter;
         _tipTitleLabel.textColor = [UIColor colorWithHexString:@"ffffff"];
@@ -125,7 +163,7 @@
 
 - (UILabel *)tipMessageLabel {
     if (!_tipMessageLabel) {
-        _tipMessageLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.tipTitleLabel.center.x - 65, 170, 400, 500)];
+        _tipMessageLabel = [[UILabel alloc]init];
         _tipMessageLabel.text = @"开启<智能消音器>\n关闭<客厅插座>\n打开<玄关开关>\n......";
         _tipMessageLabel.numberOfLines = 0;
         _tipMessageLabel.textAlignment = NSTextAlignmentCenter;
@@ -146,7 +184,7 @@
 
 - (VoiceButtonAnimationView *)buttonAnimationView {
     if (!_buttonAnimationView) {
-        _buttonAnimationView = [[VoiceButtonAnimationView alloc]initWithFrame:CGRectMake(self.view.center.x -  200, self.view.frame.size.height - 260, 400, 400)];
+        _buttonAnimationView = [[VoiceButtonAnimationView alloc]init];
         _buttonAnimationView.voiceBtnWH = Scale(78);
         _buttonAnimationView.userInteractionEnabled = NO;
 
@@ -156,7 +194,7 @@
 
 - (VoiceSiriWaveformView *)waveformView {
     if (!_waveformView) {
-        _waveformView = [[VoiceSiriWaveformView alloc]initWithFrame:CGRectMake(0, self.view.center.y - 200, self.view.bounds.size.width, 400)];
+        _waveformView = [[VoiceSiriWaveformView alloc]init];
         _waveformView.backgroundColor = [UIColor clearColor];
         _waveformView.alpha = 0;
         [_waveformView setWaveColor:[UIColor colorWithHexString:@"ffffff" alpha:0.1]];
@@ -175,9 +213,10 @@
 
 - (UIButton *)closeBtn {
     if (!_closeBtn) {
-        _closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 100, 20, 80, 80)];
+        _closeBtn = [[UIButton alloc] init];
         [_closeBtn setTitle:@"关闭" forState:UIControlStateNormal];
         _closeBtn.backgroundColor = [UIColor clearColor];
+        _closeBtn.titleLabel.font = [UIFont systemFontOfSize:20];
         [_closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _closeBtn;

@@ -6,7 +6,7 @@ target 'SampleDemo' do
   # use_frameworks!
 
   # Pods for SampleDemo
-
+pod 'Masonry'
   target 'SampleDemoTests' do
     inherit! :search_paths
     # Pods for testing
