@@ -17,6 +17,13 @@
 		C50EF07B22C1215F00A2CB74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF07A22C1215F00A2CB74 /* main.m */; };
 		C50EF08522C1215F00A2CB74 /* SampleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF08422C1215F00A2CB74 /* SampleDemoTests.m */; };
 		C50EF09022C1215F00A2CB74 /* SampleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF08F22C1215F00A2CB74 /* SampleDemoUITests.m */; };
+		C5B566E422C1A72000C4BAF4 /* VoiceSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566E322C1A72000C4BAF4 /* VoiceSiriWaveformView.m */; };
+		C5B566EB22C1A91400C4BAF4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566EA22C1A91400C4BAF4 /* UIColor+Hex.m */; };
+		C5B566EF22C1AF5900C4BAF4 /* VoiceAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566EE22C1AF5900C4BAF4 /* VoiceAssistantViewController.m */; };
+		C5B566F222C1B30500C4BAF4 /* TestingAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F122C1B30500C4BAF4 /* TestingAnimationViewController.m */; };
+		C5B566F622C1B96B00C4BAF4 /* VoiceButtonAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F522C1B96B00C4BAF4 /* VoiceButtonAnimationView.m */; };
+		C5B566F922C1C06F00C4BAF4 /* UIViewController+LYActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */; };
+		C5B566FC22C1C0B700C4BAF4 /* UIViewController+LHActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566FB22C1C0B700C4BAF4 /* UIViewController+LHActive.m */; };
 		C6601FE1217E7F35B756FCD7 /* libPods-SampleDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A3775AE96D3CC1C58CA47F /* libPods-SampleDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +68,22 @@
 		C50EF08B22C1215F00A2CB74 /* SampleDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C50EF08F22C1215F00A2CB74 /* SampleDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleDemoUITests.m; sourceTree = "<group>"; };
 		C50EF09122C1215F00A2CB74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5B566E222C1A72000C4BAF4 /* VoiceSiriWaveformView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceSiriWaveformView.h; sourceTree = "<group>"; };
+		C5B566E322C1A72000C4BAF4 /* VoiceSiriWaveformView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceSiriWaveformView.m; sourceTree = "<group>"; };
+		C5B566E922C1A91400C4BAF4 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		C5B566EA22C1A91400C4BAF4 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		C5B566EC22C1AA6900C4BAF4 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		C5B566ED22C1AF5900C4BAF4 /* VoiceAssistantViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceAssistantViewController.h; sourceTree = "<group>"; };
+		C5B566EE22C1AF5900C4BAF4 /* VoiceAssistantViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceAssistantViewController.m; sourceTree = "<group>"; };
+		C5B566F022C1B30500C4BAF4 /* TestingAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingAnimationViewController.h; sourceTree = "<group>"; };
+		C5B566F122C1B30500C4BAF4 /* TestingAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingAnimationViewController.m; sourceTree = "<group>"; };
+		C5B566F322C1B50600C4BAF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5B566F422C1B96B00C4BAF4 /* VoiceButtonAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceButtonAnimationView.h; sourceTree = "<group>"; };
+		C5B566F522C1B96B00C4BAF4 /* VoiceButtonAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonAnimationView.m; sourceTree = "<group>"; };
+		C5B566F722C1C06F00C4BAF4 /* UIViewController+LYActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LYActive.h"; sourceTree = "<group>"; };
+		C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LYActive.m"; sourceTree = "<group>"; };
+		C5B566FA22C1C0B700C4BAF4 /* UIViewController+LHActive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LHActive.h"; sourceTree = "<group>"; };
+		C5B566FB22C1C0B700C4BAF4 /* UIViewController+LHActive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LHActive.m"; sourceTree = "<group>"; };
 		D00B647D62391D46258F509E /* Pods-SampleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleDemoTests/Pods-SampleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D117A267F83A328B49F897DA /* Pods-SampleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleDemo/Pods-SampleDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,15 +164,12 @@
 		C50EF06A22C1215D00A2CB74 /* SampleDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C50EF06B22C1215D00A2CB74 /* AppDelegate.h */,
-				C50EF06C22C1215D00A2CB74 /* AppDelegate.m */,
-				C50EF06E22C1215D00A2CB74 /* ViewController.h */,
-				C50EF06F22C1215D00A2CB74 /* ViewController.m */,
-				C50EF07122C1215D00A2CB74 /* Main.storyboard */,
-				C50EF07422C1215F00A2CB74 /* Assets.xcassets */,
-				C50EF07622C1215F00A2CB74 /* LaunchScreen.storyboard */,
 				C50EF07922C1215F00A2CB74 /* Info.plist */,
-				C50EF07A22C1215F00A2CB74 /* main.m */,
+				C5B566E522C1A82F00C4BAF4 /* Tools */,
+				C5B566E122C1A3C300C4BAF4 /* Model */,
+				C5B566E022C1A3B800C4BAF4 /* Other */,
+				C5B566DF22C1A3AB00C4BAF4 /* View */,
+				C5B566DE22C1A39200C4BAF4 /* Contrroller */,
 			);
 			path = SampleDemo;
 			sourceTree = "<group>";
@@ -170,6 +190,65 @@
 				C50EF09122C1215F00A2CB74 /* Info.plist */,
 			);
 			path = SampleDemoUITests;
+			sourceTree = "<group>";
+		};
+		C5B566DE22C1A39200C4BAF4 /* Contrroller */ = {
+			isa = PBXGroup;
+			children = (
+				C50EF06E22C1215D00A2CB74 /* ViewController.h */,
+				C50EF06F22C1215D00A2CB74 /* ViewController.m */,
+				C5B566ED22C1AF5900C4BAF4 /* VoiceAssistantViewController.h */,
+				C5B566EE22C1AF5900C4BAF4 /* VoiceAssistantViewController.m */,
+				C5B566F022C1B30500C4BAF4 /* TestingAnimationViewController.h */,
+				C5B566F122C1B30500C4BAF4 /* TestingAnimationViewController.m */,
+			);
+			path = Contrroller;
+			sourceTree = "<group>";
+		};
+		C5B566DF22C1A3AB00C4BAF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5B566E222C1A72000C4BAF4 /* VoiceSiriWaveformView.h */,
+				C5B566E322C1A72000C4BAF4 /* VoiceSiriWaveformView.m */,
+				C5B566F422C1B96B00C4BAF4 /* VoiceButtonAnimationView.h */,
+				C5B566F522C1B96B00C4BAF4 /* VoiceButtonAnimationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5B566E022C1A3B800C4BAF4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C50EF06B22C1215D00A2CB74 /* AppDelegate.h */,
+				C50EF06C22C1215D00A2CB74 /* AppDelegate.m */,
+				C50EF07122C1215D00A2CB74 /* Main.storyboard */,
+				C50EF07422C1215F00A2CB74 /* Assets.xcassets */,
+				C50EF07622C1215F00A2CB74 /* LaunchScreen.storyboard */,
+				C50EF07A22C1215F00A2CB74 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		C5B566E122C1A3C300C4BAF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5B566E522C1A82F00C4BAF4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C5B566F722C1C06F00C4BAF4 /* UIViewController+LYActive.h */,
+				C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */,
+				C5B566E922C1A91400C4BAF4 /* UIColor+Hex.h */,
+				C5B566EA22C1A91400C4BAF4 /* UIColor+Hex.m */,
+				C5B566EC22C1AA6900C4BAF4 /* Header.h */,
+				C5B566F322C1B50600C4BAF4 /* PrefixHeader.pch */,
+				C5B566FA22C1C0B700C4BAF4 /* UIViewController+LHActive.h */,
+				C5B566FB22C1C0B700C4BAF4 /* UIViewController+LHActive.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +454,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C50EF07022C1215D00A2CB74 /* ViewController.m in Sources */,
+				C5B566EB22C1A91400C4BAF4 /* UIColor+Hex.m in Sources */,
+				C5B566F922C1C06F00C4BAF4 /* UIViewController+LYActive.m in Sources */,
+				C5B566F622C1B96B00C4BAF4 /* VoiceButtonAnimationView.m in Sources */,
+				C5B566F222C1B30500C4BAF4 /* TestingAnimationViewController.m in Sources */,
+				C5B566EF22C1AF5900C4BAF4 /* VoiceAssistantViewController.m in Sources */,
+				C5B566E422C1A72000C4BAF4 /* VoiceSiriWaveformView.m in Sources */,
 				C50EF07B22C1215F00A2CB74 /* main.m in Sources */,
+				C5B566FC22C1C0B700C4BAF4 /* UIViewController+LHActive.m in Sources */,
 				C50EF06D22C1215D00A2CB74 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,7 +636,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 775KD472CT;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SampleDemo/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = SampleDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +657,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 775KD472CT;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SampleDemo/Tools/PrefixHeader.pch";
 				INFOPLIST_FILE = SampleDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
