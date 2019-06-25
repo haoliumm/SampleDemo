@@ -6,11 +6,12 @@
 //  Copyright © 2019 liuhao. All rights reserved.
 //
 
-#import "UIViewController+LHActive.h"
-#import <AVFoundation/AVFoundation.h>
+//#import "UIViewController+LHActive.h"
+//#import <AVFoundation/AVFoundation.h>
 #import "VoiceButtonAnimationView.h"
 #import "VoiceSiriWaveformView.h"
 #import "VoiceAssistantViewController.h"
+#import "RecorderManager.h"
 
 @interface VoiceAssistantViewController ()
 //语音按钮
@@ -26,11 +27,7 @@
 //波浪线动画
 @property (nonatomic, strong) VoiceSiriWaveformView *waveformView;
 
-@property (nonatomic, strong) AVAudioRecorder *recorder;
-
 @property (nonatomic, strong) CADisplayLink *displaylink;
-//弹窗标识
-@property (nonatomic, assign) BOOL alerting;
 
 @end
 
@@ -39,28 +36,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
-    self.alerting = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.recorder prepareToRecord];
-    if ([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
-        [[AVAudioSession sharedInstance] performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
-            if (granted) {
-                // 麦克风可用
-            }
-            else {
-                //麦克风不可用
-                [self leadUserAuthorization];
-            }
-        }];
-    }
+    [[RecorderManager manager] recorderPrepareToRecord];
 }
 
 - (void)setUpUI {
     self.view.backgroundColor = [UIColor colorWithHexString:@"7d6342"];
-//    self.view.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.buttonAnimationView];
     [self.view addSubview:self.voiceBtn];
     [self.view addSubview:self.closeBtn];
@@ -72,23 +56,6 @@
 #pragma mark - Method
 #pragma mark
 
-- (void)leadUserAuthorization {
-    if (self.alerting) {
-        return;
-    }
-    self.alerting = YES;
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"打开麦克风失败" message:@"打开语音权限\n 使用语音发送指令" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"去打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-        self.alerting = NO;
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        self.alerting = NO;
-    }]];
-    UIViewController *active = [UIViewController activeViewController];
-    [active presentViewController:alert animated:YES completion:nil];
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self.view];
@@ -98,9 +65,6 @@
     if (self.voiceBtn.state == UIControlStateHighlighted) {
         return;
     }
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
 }
 
 - (void)voiceBtnTouchDown {
@@ -109,37 +73,22 @@
     [UIView animateWithDuration:1.0 animations:^{
         self.waveformView.alpha = 1.0;
     }];
-    [self.recorder prepareToRecord];
-    [self.recorder setMeteringEnabled:YES];
-    [self.recorder record];
+    [[RecorderManager manager] recorderStartRecord];
 }
 
 - (void)voiceBtnTouchUp {
-    [self.recorder stop];
+    [[[RecorderManager alloc] init] recorderStopRecord];
     [self.buttonAnimationView removeLayerAnimations];
     [UIView animateWithDuration:0.5 animations:^{
         self.waveformView.alpha = 0.0;
     }];
-    
     [self.displaylink invalidate];
     self.displaylink = nil;
 }
-//根据声音刷新波浪纹
+////根据声音刷新波浪纹
 - (void)updateMeters {
-    CGFloat normalizedValue;
-    [self.recorder updateMeters];
-    normalizedValue = [self _normalizedPowerLevelFromDecibels:[self.recorder averagePowerForChannel:1]];
-    //    NSLog(@"0 >>%lf  1 >>%lf",[self.recorder averagePowerForChannel:0],[self.recorder averagePowerForChannel:1]);
-    [self.waveformView updateWithLevel:normalizedValue];
+    [self.waveformView updateWithLevel:[[RecorderManager manager] updateMeters]];
 }
-
-- (CGFloat)_normalizedPowerLevelFromDecibels:(CGFloat)decibels {
-    if (decibels < -60.0f || decibels == 0.0f) {
-        return 0.0f;
-    }
-    return powf((powf(10.0f, 0.05f * decibels) - powf(10.0f, 0.05f * -60.0f)) * (1.0f / (1.0f - powf(10.0f, 0.05f * -60.0f))), 1.0f / 2.0f);
-}
-
 - (void)closeBtnClick {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -203,19 +152,6 @@
 
     }
     return _buttonAnimationView;
-}
-
-- (AVAudioRecorder *)recorder {
-    if (!_recorder) {
-        NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat: 44100.0],
-                                   AVFormatIDKey:            [NSNumber numberWithInt: kAudioFormatAppleLossless],
-                                   AVNumberOfChannelsKey:    [NSNumber numberWithInt: 2],
-                                   AVEncoderAudioQualityKey: [NSNumber numberWithInt: AVAudioQualityMin]};
-        NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
-        _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:nil];
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    }
-    return _recorder;
 }
 
 - (VoiceSiriWaveformView *)waveformView {

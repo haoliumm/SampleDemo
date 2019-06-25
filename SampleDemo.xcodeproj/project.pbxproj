@@ -17,6 +17,7 @@
 		C50EF07B22C1215F00A2CB74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF07A22C1215F00A2CB74 /* main.m */; };
 		C50EF08522C1215F00A2CB74 /* SampleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF08422C1215F00A2CB74 /* SampleDemoTests.m */; };
 		C50EF09022C1215F00A2CB74 /* SampleDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C50EF08F22C1215F00A2CB74 /* SampleDemoUITests.m */; };
+		C545A0CF22C2285A00309F46 /* RecorderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C545A0CE22C2285A00309F46 /* RecorderManager.m */; };
 		C5B566E422C1A72000C4BAF4 /* VoiceSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566E322C1A72000C4BAF4 /* VoiceSiriWaveformView.m */; };
 		C5B566EB22C1A91400C4BAF4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566EA22C1A91400C4BAF4 /* UIColor+Hex.m */; };
 		C5B566EF22C1AF5900C4BAF4 /* VoiceAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566EE22C1AF5900C4BAF4 /* VoiceAssistantViewController.m */; };
@@ -68,6 +69,8 @@
 		C50EF08B22C1215F00A2CB74 /* SampleDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C50EF08F22C1215F00A2CB74 /* SampleDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleDemoUITests.m; sourceTree = "<group>"; };
 		C50EF09122C1215F00A2CB74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C545A0CD22C2285A00309F46 /* RecorderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderManager.h; sourceTree = "<group>"; };
+		C545A0CE22C2285A00309F46 /* RecorderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderManager.m; sourceTree = "<group>"; };
 		C5B566E222C1A72000C4BAF4 /* VoiceSiriWaveformView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceSiriWaveformView.h; sourceTree = "<group>"; };
 		C5B566E322C1A72000C4BAF4 /* VoiceSiriWaveformView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceSiriWaveformView.m; sourceTree = "<group>"; };
 		C5B566E922C1A91400C4BAF4 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -164,9 +167,9 @@
 		C50EF06A22C1215D00A2CB74 /* SampleDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C545A0CC22C2281900309F46 /* ViewModel */,
 				C50EF07922C1215F00A2CB74 /* Info.plist */,
 				C5B566E522C1A82F00C4BAF4 /* Tools */,
-				C5B566E122C1A3C300C4BAF4 /* Model */,
 				C5B566E022C1A3B800C4BAF4 /* Other */,
 				C5B566DF22C1A3AB00C4BAF4 /* View */,
 				C5B566DE22C1A39200C4BAF4 /* Contrroller */,
@@ -190,6 +193,15 @@
 				C50EF09122C1215F00A2CB74 /* Info.plist */,
 			);
 			path = SampleDemoUITests;
+			sourceTree = "<group>";
+		};
+		C545A0CC22C2281900309F46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C545A0CD22C2285A00309F46 /* RecorderManager.h */,
+				C545A0CE22C2285A00309F46 /* RecorderManager.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C5B566DE22C1A39200C4BAF4 /* Contrroller */ = {
@@ -227,13 +239,6 @@
 				C50EF07A22C1215F00A2CB74 /* main.m */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		C5B566E122C1A3C300C4BAF4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C5B566E522C1A82F00C4BAF4 /* Tools */ = {
@@ -457,6 +462,7 @@
 				C5B566EB22C1A91400C4BAF4 /* UIColor+Hex.m in Sources */,
 				C5B566F922C1C06F00C4BAF4 /* UIViewController+LYActive.m in Sources */,
 				C5B566F622C1B96B00C4BAF4 /* VoiceButtonAnimationView.m in Sources */,
+				C545A0CF22C2285A00309F46 /* RecorderManager.m in Sources */,
 				C5B566F222C1B30500C4BAF4 /* TestingAnimationViewController.m in Sources */,
 				C5B566EF22C1AF5900C4BAF4 /* VoiceAssistantViewController.m in Sources */,
 				C5B566E422C1A72000C4BAF4 /* VoiceSiriWaveformView.m in Sources */,

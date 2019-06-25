@@ -34,14 +34,14 @@
     [self.view addSubview:self.testingVCBtn];
 }
 
-- (void)voiceVCBtnClick {
-    VoiceAssistantViewController *voiceVC = [[VoiceAssistantViewController alloc] init];
-    [self presentViewController:voiceVC animated:YES completion:nil];
-}
-
--(void)testingVCBtnClick {
-    TestingAnimationViewController *testingVC = [[TestingAnimationViewController alloc] init];
-    [self presentViewController:testingVC animated:YES completion:nil];
+- (void)buttonClickAction:(UIButton *)button{
+    if (button == self.voiceVCBtn) {
+        VoiceAssistantViewController *voiceVC = [[VoiceAssistantViewController alloc] init];
+        [self presentViewController:voiceVC animated:YES completion:nil];
+    }else if (button == self.testingVCBtn) {
+        TestingAnimationViewController *testingVC = [[TestingAnimationViewController alloc] init];
+        [self presentViewController:testingVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - lazy load
@@ -52,7 +52,7 @@
         _voiceVCBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.center.x - 100, self.view.center.y - 200, 200, 50)];
         _voiceVCBtn.backgroundColor = [UIColor colorWithHexString:@"2e4324"];
         [_voiceVCBtn setTitle:@"语音指令" forState:UIControlStateNormal];
-        [_voiceVCBtn addTarget:self action:@selector(voiceVCBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_voiceVCBtn addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _voiceVCBtn;
 }
@@ -62,7 +62,7 @@
         _testingVCBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.center.x - 100, self.view.center.y + 200, 200, 50)];
         _testingVCBtn.backgroundColor = [UIColor colorWithHexString:@"2e9994"];
         [_testingVCBtn setTitle:@"检测动画" forState:UIControlStateNormal];
-        [_testingVCBtn addTarget:self action:@selector(testingVCBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_testingVCBtn addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _testingVCBtn;
 }
