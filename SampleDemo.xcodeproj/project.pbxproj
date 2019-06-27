@@ -23,7 +23,6 @@
 		C5B566EF22C1AF5900C4BAF4 /* VoiceAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566EE22C1AF5900C4BAF4 /* VoiceAssistantViewController.m */; };
 		C5B566F222C1B30500C4BAF4 /* TestingAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F122C1B30500C4BAF4 /* TestingAnimationViewController.m */; };
 		C5B566F622C1B96B00C4BAF4 /* VoiceButtonAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F522C1B96B00C4BAF4 /* VoiceButtonAnimationView.m */; };
-		C5B566F922C1C06F00C4BAF4 /* UIViewController+LYActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */; };
 		C5B566FC22C1C0B700C4BAF4 /* UIViewController+LHActive.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B566FB22C1C0B700C4BAF4 /* UIViewController+LHActive.m */; };
 		C6601FE1217E7F35B756FCD7 /* libPods-SampleDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A3775AE96D3CC1C58CA47F /* libPods-SampleDemo.a */; };
 /* End PBXBuildFile section */
@@ -83,8 +82,6 @@
 		C5B566F322C1B50600C4BAF4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C5B566F422C1B96B00C4BAF4 /* VoiceButtonAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceButtonAnimationView.h; sourceTree = "<group>"; };
 		C5B566F522C1B96B00C4BAF4 /* VoiceButtonAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceButtonAnimationView.m; sourceTree = "<group>"; };
-		C5B566F722C1C06F00C4BAF4 /* UIViewController+LYActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LYActive.h"; sourceTree = "<group>"; };
-		C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LYActive.m"; sourceTree = "<group>"; };
 		C5B566FA22C1C0B700C4BAF4 /* UIViewController+LHActive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LHActive.h"; sourceTree = "<group>"; };
 		C5B566FB22C1C0B700C4BAF4 /* UIViewController+LHActive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LHActive.m"; sourceTree = "<group>"; };
 		D00B647D62391D46258F509E /* Pods-SampleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleDemoTests/Pods-SampleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,8 +241,6 @@
 		C5B566E522C1A82F00C4BAF4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				C5B566F722C1C06F00C4BAF4 /* UIViewController+LYActive.h */,
-				C5B566F822C1C06F00C4BAF4 /* UIViewController+LYActive.m */,
 				C5B566E922C1A91400C4BAF4 /* UIColor+Hex.h */,
 				C5B566EA22C1A91400C4BAF4 /* UIColor+Hex.m */,
 				C5B566EC22C1AA6900C4BAF4 /* Header.h */,
@@ -460,7 +455,6 @@
 			files = (
 				C50EF07022C1215D00A2CB74 /* ViewController.m in Sources */,
 				C5B566EB22C1A91400C4BAF4 /* UIColor+Hex.m in Sources */,
-				C5B566F922C1C06F00C4BAF4 /* UIViewController+LYActive.m in Sources */,
 				C5B566F622C1B96B00C4BAF4 /* VoiceButtonAnimationView.m in Sources */,
 				C545A0CF22C2285A00309F46 /* RecorderManager.m in Sources */,
 				C5B566F222C1B30500C4BAF4 /* TestingAnimationViewController.m in Sources */,
